@@ -107,25 +107,28 @@ using namespace std;
 //}obj,obj1;
 
 //Решение квадратного уровнения и нахождение его корней
-class Square_level {
-public:
-  double a;
-  double b;
-  double c;
-  double x;
-  double x1;
-  double x2;
-  double num(double p,double s)const {
-    return p, s;
-  }
-  double sum(double f) const {
-    return f;
-  }
+//class Square_level {
+//public:
+//  double a;
+//  double b;
+//  double c;
+//  double x;
+//  double x1;
+//  double x2;
+//  double num(double p,double s)const {
+//    return p, s;
+//  }
+//  double sum(double f) const {
+//    return f;
+//  }
+//
+//  bool operator==(const Square_level& other) const {
+//    return false;
+//  }
+//}obj, obj1, obj2;
 
-  bool operator==(const Square_level& other) const {
-    return false;
-  }
-}obj, obj1, obj2;
+
+
 
 
 int main() {
@@ -160,14 +163,14 @@ int main() {
      cout << obj2.N << "" << ":sh(" << x << ") = " << obj1.sh(x) << endl;
      cout << "Test value = " << sinh(x) << endl;*/
 
-     /*cout << "Enter the number of factorial =" << " ";
+   /*cout << "Enter the number of factorial =" << " ";
          cin >> object1.n;
          cout << endl;
          object2.work(object1.n);
          cout << "The number of factorial =" << " ";
          object2.shou();*/
 
-         /*cout << "Enter the number of factorial = " << "";
+   /*cout << "Enter the number of factorial = " << "";
          cin >> object1.n;
          object2.work(object1.n);
          cout << endl;
@@ -175,7 +178,7 @@ int main() {
          object2.numberfactorial();
          cout << endl;*/
 
-         /*cout << "Enter the first coordinate of the vector =" << " ";
+   /*cout << "Enter the first coordinate of the vector =" << " ";
          cin >> obj.a;
          cout << "\n";
          cout << "Enter the second coordinate of the vector =" << " ";
@@ -189,7 +192,7 @@ int main() {
          std::ignore = sqrt(obj.d);
          obj1.sum(obj.d);*/
 
-  double D = 0;
+  /*double D = 0;
   cout << "Enter coefficients for square levels:" << endl;
   cin >> obj.a;
   cin >> obj.b;
@@ -217,7 +220,11 @@ int main() {
     cout << "The level has no roots" << endl;
     cout << "The discriminant is equal =" << " " << D << endl;
   }
-  cout << "\n";
+  cout << "\n";*/
+
+
+
+   
 
 
 
@@ -226,6 +233,9 @@ int main() {
 
 
 
+
+
+  
 
   system("pause");
   return 0;
