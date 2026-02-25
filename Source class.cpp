@@ -1,14 +1,30 @@
 #include<iostream>
 #include<cmath>
 #include<math.h>
-#include<set>
+//#include<math.h>
+//#include<set>
 #include<Windows.h>
 #include<cstdlib>
 #include<cstdio>
-#include<ctime>
-#include<complex>
-#include<string>
-using namespace std;
+//#include<stdio.h>
+//#include<ctime>
+//#include<complex>
+//#include<string>
+#include<vector>
+#include<stdexcept>
+#include<functional>
+#include<exception>
+#include<random>
+#include<iomanip>
+#include <expected>
+
+
+
+
+
+
+
+
 
 
 //class algebra {
@@ -86,55 +102,100 @@ using namespace std;
 //  } 
 //};
 
-class Vector {
-public:
-  double fi{ 0 };
-  double cosine_value{ 0 };
-  double Scalar_work{ 0 };
-  const double pi = 3.14;
-  double gradys{ 0 };
-  double A{ 0 };
-  double A1{ 0 };
-  double A2{ 0 };
-  double B{ 0 };
-  double B1{ 0 };
-  double B2{ 0 };
-public:
-  Vector() = default;
 
-  double work(Vector obj) {
-    A = sqrt(pow(obj.A1, 2) + pow(obj.A2, 2));
-    cout << "A =" << " " << A << endl;
-    cout << endl;
-    return A;
+
+
+//class Vektor {
+//protected:
+//  vector <int> array1;
+//  string name;
+//public:
+//  Vektor() = default;
+//
+//  Vektor(vector<int>array2, string name) {
+//    array1 = array2;
+//    this->name = name;
+//  }
+//  void number()const {
+//    cout << " " << "================" << name << "================" << endl;
+//    for (int i : array1) {
+//      cout << " " << i;
+//    }
+//    cout << endl;
+//    cout << " " << "В массиве вектора цифры больше десяти но меньше пятнадцати" << endl;
+//    for (int a : array1) {
+//      if (a > 10 && a < 15) {
+//        cout << " " << a << endl;
+//      }
+//    }
+//    cout << endl;
+//  }
+//  ~Vektor() {};
+//};
+
+//Произведение вектора
+class  Vector_representation
+{
+private:
+  char z = 86;
+  char z1 = 61;
+  int lines_a{};
+  int lines_b{};
+  float array[3]{};
+  float array1[3]{};
+  float proizvedenievec[3]{};
+public:
+  Vector_representation(int a, int b) :lines_a(a), lines_b(b) {}
+
+  void filling_in_the_array()
+  {
+    if (lines_a > 3 || lines_b > 3)
+    {
+      std::cout << "Error!" << " " << "error code 1" << std::endl;
+      exit(0);
+    }
+
+    std::cout << "\n";
+    std::cout << z <<" " << "1" << " " << z1 << " ";
+
+    for (int i = 0; i < lines_a; ++i)
+    {
+      std::cin >> array[i];
+    }
+    std::cout << "\n";
+
+    std::cout << z << " " << "2" << " " << z1 << " ";
+
+    for (int j = 0; j < lines_b; ++j)
+    {
+      std::cin >> array1[j];
+    }
+    std::cout << "\n";
   }
-  double work1(Vector obj1) {
-    B = sqrt(pow(obj1.B1, 2) + pow(obj1.B2, 2));
-    cout << "B =" << " " << B << endl;
-    cout << endl;
-    return B;
+  float The_product_of_the_vector()
+  {
+    proizvedenievec[0] = array[1] * array1[2] - array[2] * array1[1];
+    proizvedenievec[1] = array[2] * array1[0] - array[0] * array1[2];
+    proizvedenievec[2] = array[0] * array1[1] - array[1] * array1[0];
+
+    return proizvedenievec[0], proizvedenievec[1], proizvedenievec[2];
   }
-  double work2(Vector obj2, Vector obj3) {
-    Scalar_work = (obj2.A1 * obj3.B1) + (obj2.A2 * obj3.B2);
-    cout << "Scalar_work =" << " " << Scalar_work << endl;
-    cout << endl;
-    return Scalar_work;
+  void print_The_product_of_the_vector()const
+  {
+    std::cout << "The product of the vector is" << std::endl;
+    std::cout << "\n";
+    std::cout << "Vector ->" << " ";
+    for (int i = 0; i < 3; i++)
+    {
+      std::cout << proizvedenievec[i] << " ";
+    }
+    std::cout << "\n";
+    std::cout << "\n";
   }
-  const double Corner(){
-    fi = (objC.Scalar_work / (objA.A * objB.B));
-    cosine_value = acos(objC.fi);
-    gradys = objC.cosine_value * 180 / pi;
-    cout << "Cosine of the angle fi =" << " " << fi << endl;
-    cout << endl;
-    cout << "radian cosine_value =" << " " << cosine_value << endl;
-    cout << endl;
-    cout << "The degree of the angle of the vector =" << " " << gradys << endl;
-    cout << endl;
-    return fi;
-    return cosine_value;
-    return gradys;
-  }
-}objA, objB, objC;
+
+  ~Vector_representation() {}
+};
+
 
 
 int main() {
@@ -156,32 +217,69 @@ int main() {
   p->show(objA);
   p->show(objB);
   v->Trigenometricform(objC, objC);*/
+
   /*Cosinuscomplexnumber obj3, obj4;
   cout << "Pleas enter the number x =" << " ";
   cin >> obj3.x;
   cout << "Pleas enter the number Rx =" << " ";
   cin >> obj3.Rx;
   obj4.Hyperbolic_cosine_and_sinus(obj3);
-  obj4.Caluation_of_cosine(obj3);*/
+  obj4.Caluation_of_cosine(obj3);
 
-  cout << "Enter the first vector" << " "<<"A1 ="<<" ";
+  cout << "Enter the first vector" << " " << "A1 =" << " ";
   cin >> objA.A1;
   cout << endl;
-  cout << "Enter  the second number of vectors " << " "<<"A2 ="<<" ";
+  cout << "Enter  the second number of vectors " << " " << "A2 =" << " ";
   cin >> objA.A2;
   cout << endl;
-  cout << "Enter the third number of vector" << " "<<"B1 ="<<" ";
+  cout << "Enter the third number of vector" << " " << "B1 =" << " ";
   cin >> objB.B1;
   cout << endl;
-  cout << "Enter the fourth number of vectors" << " "<<"B2 ="<<" ";
+  cout << "Enter the fourth number of vectors" << " " << "B2 =" << " ";
   cin >> objB.B2;
   cout << endl;
   objA.work(objA);
   objB.work1(objB);
-  objC.work2(objA,objB);
+  objC.work2(objA, objB);
   objC.Corner();
-  
- 
+
+  Number number(5);
+  number.number();*/
+
+  /*typedef int s;
+  s sim = 5;
+  cout << "sim =" << " " << sim << endl;
+  enum color { red = 10, blue, elow, blake }car{};
+  car = red;
+  color vam = blue;
+  cout << "car =" << " " << car << endl;
+  cout << "vam =" << " " << vam << endl;*/
+
+  /*vector<int>array3;
+  for (int i = 1; i <= 15; i++) {
+    array3.push_back(i);
+  }
+  Vektor num(array3, "Vector");
+  num.number();*/
+
+  //Произведение вектора
+  int c = 0;
+  int m = 0;
+  std::cout << " " << "==== Enter an array of three elements in size ====" << std::endl;
+  std::cout << "======================//==========================" << std::endl;
+  std::cout << "\n";
+  std::cout << "lines_a = ";
+  std::cin >> c;
+  std::cout << "\n";
+  std::cout << "lines_b = ";
+  std::cin >> m;
+  std::cout << "\n";
+
+  Vector_representation obj(c, m);
+  obj.filling_in_the_array();
+  obj.The_product_of_the_vector();
+  obj.print_The_product_of_the_vector();
+
   system("pause");
   return 0;
 }
